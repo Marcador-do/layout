@@ -60,6 +60,10 @@ body {
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
+#sidebar-wrapper::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 #wrapper.toggled #sidebar-wrapper {
 	width: 65px;
 	overflow-y: scroll;
@@ -133,11 +137,11 @@ body {
 	#wrapper .sidebar-nav li[sidebar-nav-submenu]:before,
 	#wrapper .sidebar-nav li[sidebar-nav-submenu]:after {
 		opacity: 0;
-		-webkit-transition: opacity 0.2s 0.1s ease;
-		-moz-transition: opacity 0.2s 0.1s ease;
-		-ms-transition: opacity 0.2s 0.1s ease;
-		-o-transition: opacity 0.2s 0.1s ease;
-		transition: opacity 0.2s 0.1s ease;
+		-webkit-transition: opacity 0.1s ease;
+		-moz-transition: opacity 0.1s ease;
+		-ms-transition: opacity 0.1s ease;
+		-o-transition: opacity 0.1s ease;
+		transition: opacity 0.1s ease;
 		content: "";
 		position: absolute;
 		right: 16px;
@@ -285,7 +289,7 @@ body {
 	position: relative;
 	cursor: pointer;
 }
-.sidebar-nav li[sidebar-nav-submenu].toggled {
+#wrapper.toggled .sidebar-nav li[sidebar-nav-submenu].toggled {
 	background-color: #5f5f5f;
 }
 .sidebar-nav li .sidebar-nav-submenu {
@@ -352,19 +356,29 @@ body {
 	color: #000;
 }
 @media screen and (min-width: 480px) {
-	#wrapper .sidebar-nav li.toggled .sidebar-nav-submenu {
+	/* Submenu */
+	#wrapper .sidebar-nav li[sidebar-nav-submenu] .sidebar-nav-submenu {
 		left: 70px;
 	    opacity: 1;
 	    position: absolute;
 	    top: 0;
 	    padding: 0;
+	    height: auto;
+	    display: none;
 	}
-	#wrapper.toggled .sidebar-nav li.toggled .sidebar-nav-submenu {
+	#wrapper .sidebar-nav li[sidebar-nav-submenu]:hover .sidebar-nav-submenu {
+		display: block;
+	}
+	#wrapper.toggled .sidebar-nav li[sidebar-nav-submenu]:hover .sidebar-nav-submenu {
+		display: none;
+	}
+	#wrapper.toggled .sidebar-nav li[sidebar-nav-submenu].toggled .sidebar-nav-submenu {
 	    left: 0;
 	    position: relative;
 	    top: 0;
 	    z-index: 200;
 	    width: 100%;
+	    display: block;
 	}
 	#wrapper.toggled .sidebar-nav li .sidebar-nav-submenu li a {
 		border-bottom: none;
