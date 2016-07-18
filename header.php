@@ -53,7 +53,7 @@ printf($authors); ?>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <!-- Font-family START -->
     <!-- 
@@ -92,7 +92,7 @@ printf($authors); ?>
 					</span>
 				</a> 
 			</li>
-			<li>
+			<li id="sidebar-search-toggle" sidebar-nav-submenu class>
 				<a href="#buscar"> 
 					<span class="sidebar-icon">
 						<i class="material-icons md-light md-24">search</i>
@@ -100,8 +100,28 @@ printf($authors); ?>
 					<span class="sidebar-menu-item">
 						Buscar
 					</span>
-				</a> 
-			</li>
+				</a>
+				<ul class="sidebar-nav-submenu">
+					<li>
+						<!-- Sidebar Search Form -->
+						<div id="sidebar-search-form">
+							<form action="/" method="get">
+								<div class="row">
+									<div class="col-xs-9">
+										<input type="text" class="form-control input-lg" name="s">
+									</div>
+									<div class="col-xs-3">
+										<button type="submit" class="btn btn-search btn-block btn-lg">
+											<i class="material-icons md-light md-24">search</i>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- #Sidebar Search Form -->
+					</li>
+				</ul>
+			</li>		
 			<li sidebar-nav-submenu class>
 				<a href="#" class="">
 					<span class="sidebar-icon">
@@ -188,7 +208,7 @@ printf($authors); ?>
 			</div>
 		</nav>
 		<!-- /.navbar-marcador -->
-
+		
 	</div>
 	<!-- /#page-content-wrapper -->
 

@@ -19,18 +19,40 @@
  * @author Richard Blondet
  */
 var SidebarNav_SubMenu = function( selectorElements ) {
-	this.elements = selectorElements,
-	_this = this;
+	this.elements = selectorElements;
+	var _this = this;
+
+	/** Prevent Propagation for all submenu */
+	[].forEach.call( document.querySelectorAll('.sidebar-nav-submenu li'), function( menuLinks ) {
+		menuLinks.addEventListener('click', function(e) {
+			e.stopPropagation();
+		});
+	});
 
 	[].forEach.call( this.elements, function( el ) {
 		el.onclick = function( e ) {
-			e.preventDefault();
-			if ( _this.isOpen( el, 'toggled' ) ) {
-				_this.close( el, e );
-			}
-			else {
-				_this.open( el, e );
-			}
+			
+			/* Close all elements opened and only open the current clicked */
+			[].forEach.call( _this.elements, function( el ) {
+				if ( _this.isOpen( el, 'toggled' ) ) {
+					_this.close( el, e );
+				}
+			});
+			
+			/** Find the element clicked */
+			[].forEach.call( e.path, function( nodeEl ) {
+				if( typeof nodeEl.attributes !== "undefined" && nodeEl.attributes.length > 0) {
+					if( 'sidebar-nav-submenu' in nodeEl.attributes && typeof nodeEl.attributes['sidebar-nav-submenu'] === "object"  ) {
+						e.preventDefault();
+						if ( _this.isOpen( el, 'toggled' ) ) {
+							_this.close( el, e );
+						}
+						else {
+							_this.open( el, e );
+						}
+					}
+				}
+			});
 		}
 	});
 };
