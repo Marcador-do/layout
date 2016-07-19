@@ -28,6 +28,7 @@ Colors:
 3. Navbar
 4. Material Icons Rules
 5. Sidebar search form
+6. Sidebar Social Icons
 /*------------------------------*/
 
 /* 0. General Styling */
@@ -511,5 +512,48 @@ body {
 	}
 	#wrapper.toggled .sidebar-nav #sidebar-search-toggle[sidebar-nav-submenu].toggled:hover .sidebar-nav-submenu {
 		display: block;
+	}
+}
+
+/* 6. Sidebar Social Icons */
+#social.sidebar-nav {
+	position: absolute;
+	top: auto;
+	bottom: 15px;
+    left: 17px;
+}
+#social.sidebar-nav li a {
+	margin-top: 13px;
+	padding-top: 0;
+}
+.marcador-icon {
+	background-image: url('assets/imgs/social_sprite.png');
+	background-repeat:  no-repeat;
+	width: 29px;
+	height: 29px;
+	display: block;
+}
+.marcador-icon.facebook {
+	background-position:  -10px -12px;
+}
+.marcador-icon.linkedin {
+	background-position: -50px -12px;
+}
+.marcador-icon.rss {
+	background-position: -91px -12px;
+}
+.marcador-icon.twitter {
+	background-position: -131px -12px;
+}
+@media screen and ( min-width: 480px ) {
+	#social.sidebar-nav {
+		left: 10px;
+	}
+	#social.sidebar-nav li {
+		border: none;
+	}
+	#social.sidebar-nav li a {
+		margin-top: 2px;
+		padding: 10px;
 	}
 }

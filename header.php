@@ -189,6 +189,28 @@ printf($authors); ?>
 				</a> 
 			</li>
 		</ul>
+		<ul id="social" class="sidebar-nav">
+			<li>
+				<a href="#facebook">
+					<span class="marcador-icon facebook"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#twitter">
+					<span class="marcador-icon twitter"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#rss">
+					<span class="marcador-icon rss"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#linkedin">
+					<span class="marcador-icon linkedin"></span>
+				</a>
+			</li>
+		</ul>
 	</div>
 	<!-- /#sidebar-wrapper -->
 
