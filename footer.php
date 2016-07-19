@@ -55,9 +55,32 @@
 
 				new SidebarNav_SubMenu( elements );
 			}
+
+			/**
+			 * Open the sidebar menu and focus the input when clicked
+			 * @return {Bool} undefined
+			 */
+			function sidebarSearchPatch() {
+				var sideMenu = SidebarMenu.getInstance();
+				var searchButton = document.querySelector("#sidebar-search-toggle");
+				var input = document.querySelectorAll('#sidebar-search-form .form-control')[0];
+					
+					/** Obey to the clicked event without modifying onclick */
+					searchButton.addEventListener('click', function( e ) {
+						if(! sideMenu.isOpen() ) {
+							sideMenu.open();
+							/* always open the search when this clicked */
+							searchButton.className = "toggled";
+						}
+						/** Focus input right away */
+						input.focus();
+					});
+			}
+
 			init = function() {
 				setSidebarMenu();
 				setSubmenuSidebar();
+				sidebarSearchPatch();
 			};
 			/** @type {function} triggers on page load */
 			page.onload = init;
