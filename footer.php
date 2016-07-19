@@ -23,7 +23,8 @@
 					document.getElementsByClassName("sidebar-bar-close")[0],
 					document.getElementsByClassName("navbar-menu-btn")[0]
 				];
-				[].forEach.call(menuToggleButtons, function(btn){
+				/** Add the event to everyone of the provided buttons */
+				[].forEach.call( menuToggleButtons, function(btn){
 					btn.onclick = function(e) {
 						e.preventDefault();
 						if( sideMenu.isOpen() ) {
@@ -33,6 +34,16 @@
 						}
 					}
 				});
+
+				/** Add the close to the `esc` keypress */
+				document.onkeyup = function( e ) {
+					var key_number = ( typeof e.which === "number" ) ? e.which : e.keyCode;
+					if( key_number === 27 ) {
+						if( sideMenu.isOpen() ) {
+							sideMenu.close();
+						}
+					}
+				}
 			}
 
 			/**

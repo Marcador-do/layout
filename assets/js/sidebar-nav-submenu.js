@@ -29,13 +29,14 @@ var SidebarNav_SubMenu = function( selectorElements ) {
 		});
 	});
 
+	/** Add the event to the clicked element */
 	[].forEach.call( this.elements, function( el ) {
 		el.onclick = function( e ) {
 			
-			/* Close all elements opened and only open the current clicked */
-			[].forEach.call( _this.elements, function( el ) {
-				if ( _this.isOpen( el, 'toggled' ) ) {
-					_this.close( el, e );
+			/* Close all elements opened and only avoid the current clicked */
+			[].forEach.call( _this.elements, function( allEl ) {
+				if ( _this.isOpen( allEl, 'toggled' ) && !( allEl === el )) {
+					_this.close( allEl, null );
 				}
 			});
 			
@@ -67,7 +68,7 @@ var SidebarNav_SubMenu = function( selectorElements ) {
 SidebarNav_SubMenu.prototype.open = function( element, event, callback ) {
 	var _this = this;
 
-	if (element.classList) {
+	if ( element.classList ) {
 	  	element.classList.add( "toggled" );
 	}
 	else {
@@ -90,7 +91,7 @@ SidebarNav_SubMenu.prototype.open = function( element, event, callback ) {
 SidebarNav_SubMenu.prototype.close = function( element, event, callback ) {
 	var _this = this;
 
-	if (element.classList) {
+	if ( element.classList ) {
 		element.classList.remove("toggled");
 	} else {
 		element.className = element.className.replace(new RegExp('(^|\\b)' + "toggled".split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
@@ -112,7 +113,7 @@ SidebarNav_SubMenu.prototype.isOpen = function( element, classOpener ) {
 		bool = element.classList.contains( classOpener );
 	}
 	else {
-		bool = new RegExp('(^| )' + classOpener + '( |$)', 'gi').test(element.className);
+		bool = new RegExp('(^| )' + classOpener + '( |$)', 'gi').test( element.className );
 	}
 	return bool;
 };
