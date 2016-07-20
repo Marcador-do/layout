@@ -35,25 +35,18 @@ var SidebarNav_SubMenu = function( selectorElements ) {
 			
 			/* Close all elements opened and only avoid the current clicked */
 			[].forEach.call( _this.elements, function( allEl ) {
-				if ( _this.isOpen( allEl, 'toggled' ) && !( allEl === el )) {
+				if ( _this.isOpen( allEl, 'toggled' ) && ( allEl !== el )) {
 					_this.close( allEl, null );
-				}
+				} 
 			});
-			
-			/** Find the element clicked */
-			[].forEach.call( e.path, function( nodeEl ) {
-				if( typeof nodeEl.attributes !== "undefined" && nodeEl.attributes.length > 0) {
-					if( 'sidebar-nav-submenu' in nodeEl.attributes && typeof nodeEl.attributes['sidebar-nav-submenu'] === "object"  ) {
-						e.preventDefault();
-						if ( _this.isOpen( el, 'toggled' ) ) {
-							_this.close( el, e );
-						}
-						else {
-							_this.open( el, e );
-						}
-					}
-				}
-			});
+
+			/** Toggle the element clicked */
+			if ( _this.isOpen( el, 'toggled' ) ) {
+				_this.close( el, e );
+			}
+			else {
+				_this.open( el, e );
+			}
 		}
 	});
 };

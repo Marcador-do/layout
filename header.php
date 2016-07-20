@@ -233,6 +233,13 @@ printf($authors); ?>
 		
 	</div>
 	<!-- /#page-content-wrapper -->
-
+	
+	<div class="container-fluid">
+		<div class="well" style="background-color: #ccc;padding: 25px;margin-top: 25px;">
+			<h1>
+				Hello World
+			</h1>
+		</div>
+	</div>
 </div>
 <!-- /#wrapper -->

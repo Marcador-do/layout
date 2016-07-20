@@ -71,9 +71,9 @@
 							sideMenu.open();
 							/* always open the search when this clicked */
 							searchButton.className = "toggled";
+							/** Focus input right away */
+							input.focus();
 						}
-						/** Focus input right away */
-						input.focus();
 					});
 			}
 
