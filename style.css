@@ -29,6 +29,8 @@ Colors:
 4. Material Icons Rules
 5. Sidebar search form
 6. Sidebar Social Icons
+7. Sidebar footer links
+8. Sidebar footer copy
 /*------------------------------*/
 
 /* 0. General Styling */
@@ -90,6 +92,7 @@ body {
 	}
 	#wrapper.toggled #sidebar-wrapper {
 		width: 250px;
+		overflow-y: auto;
 	}
 	#page-content-wrapper {
 		position: relative;
@@ -137,7 +140,7 @@ body {
 		background-color: #4a4a4a;
 	}
 	.sidebar-nav li.toggled a:hover {
-		background-color: inherit;
+		background-color: #4a4a4a;
 	}
 	#wrapper .sidebar-nav li[sidebar-nav-submenu]:before,
 	#wrapper .sidebar-nav li[sidebar-nav-submenu]:after {
@@ -175,6 +178,9 @@ body {
 	#wrapper.toggled .sidebar-nav li[sidebar-nav-submenu].toggled:before {
 		right: 11px;
 	}
+	#wrapper.toggled .sidebar-nav li.toggled a {
+		background-color: #e80303;
+	} 
 }
 .sidebar-nav li a:hover {
 	text-decoration: none;
@@ -402,6 +408,7 @@ body {
 		border-bottom: none;
 		padding-left: 25px;
 		margin-left: 25px;
+		background-color: #3d3d3d;
 	}
 	#wrapper.toggled .sidebar-nav li .sidebar-nav-submenu li a:before,
 	#wrapper.toggled .sidebar-nav li .sidebar-nav-submenu li a:after {
@@ -555,7 +562,13 @@ body {
 }
 @media screen and ( min-width: 480px ) {
 	#social.sidebar-nav {
+		position: absolute;
 		left: 10px;
+		-webkit-transition: width 1s linear, left 0.5s ease;
+		-moz-transition: width 1s linear, left 0.5s ease;
+		-ms-transition: width 1s linear, left 0.5s ease;
+		-o-transition: width 1s linear, left 0.5s ease;
+		transition: width 1s linear, left 0.5s ease;
 	}
 	#social.sidebar-nav li {
 		border: none;
@@ -563,6 +576,14 @@ body {
 	#social.sidebar-nav li a {
 		margin-top: 2px;
 		padding: 10px;
+	}
+	#wrapper.toggled #social {
+		width: 215px;
+		left: 20px;
+		bottom: 75px;
+	}
+	#wrapper.toggled #social li {
+		display: inline-block;
 	}
 }
 /* Patch for height < 500 */
@@ -578,5 +599,86 @@ body {
 	#wrapper.toggled #social li {
 		display: inline-block;
 		padding: 0 2px;
+	}
+}
+
+/* 7. Sidebar footer links */
+#wrapper #marcador-ref-links,
+#wrapper.toggled #marcador-ref-links {
+	display: none;
+}
+@media screen and ( min-width: 480px ) {
+	#wrapper #marcador-ref-links {
+	    width: 100%;
+	    position: absolute;
+	    display: none;
+	    opacity: 0;
+	    -webkit-transition: opacity 1s ease;
+	    -moz-transition: opacity 1s ease;
+	    -ms-transition: opacity 1s ease;
+	    -o-transition: opacity 1s ease;
+	    transition: opacity 1s ease;
+	    bottom: 60px;
+	}
+	#wrapper.toggled #marcador-ref-links {
+	    opacity: 1;
+	    display: block;
+	}
+	#marcador-ref-links ul {
+	    padding: 0;
+	    margin: 0 auto;
+	    width: 168px;
+	    list-style: none;
+	}
+	#marcador-ref-links ul li {
+	    display: inline-block;
+	    margin: 0 5px;
+	}
+	#marcador-ref-links ul li:nth-child(1):after {
+	    content: "/";
+	    color: #fff;
+	    position: relative;
+	    left: 5px;
+	    
+	}
+	#marcador-ref-links ul li a {
+	    font-size: 12px;
+	    text-align: center;
+	}
+	#marcador-ref-links ul li a:hover {
+	    color: #fff;
+	}
+}
+
+/* 8. Sidebar footer copy */
+#wrapper #marcador-legal-copy,
+#wrapper.toggled #marcador-legal-copy {
+	display: none;
+}
+@media screen and ( min-width: 480px ) {
+	#wrapper #marcador-legal-copy,
+	#wrapper.toggled #marcador-legal-copy {
+		display: block;
+	}
+	#wrapper #marcador-legal-copy {
+	    opacity: 0;
+	    position: absolute;
+	    width: 100%;
+	    bottom: 15px;
+	    left: -500px;
+	    transition: left 0.25s linear;
+	}
+	#wrapper.toggled #marcador-legal-copy {
+	    opacity: 1;
+	    left: -0px;
+	}
+	#marcador-legal-copy div {
+	    color: #fff;
+	    display: block;
+	    width: 250px;
+	    text-align: center;
+	    font-size: 12px;
+	    font-weight: 300;
+	    letter-spacing: 1px;
 	}
 }

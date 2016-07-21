@@ -211,6 +211,21 @@ printf($authors); ?>
 				</a>
 			</li>
 		</ul>
+		<div id="marcador-ref-links">
+			<ul>
+				<li>
+					<a href="#contacto">Contacto</a>
+				</li>
+				<li>
+					<a href="#quienes-somos">Quienes Somos</a>
+				</li>
+			</ul>
+		</div>
+		<div id="marcador-legal-copy">
+			<div>
+				Copyright &copy; 2016 &mdash; Marcador.do &mdash; <br> Todos los derechos reservados
+			</div>
+		</div>
 	</div>
 	<!-- /#sidebar-wrapper -->
 
