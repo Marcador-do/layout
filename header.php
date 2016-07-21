@@ -65,6 +65,7 @@ printf($authors); ?>
 	 	link: http://google.github.io/material-design-icons/#getting-icons
 	-->
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/benton-marcador/font.css">
     <!-- Font-family END -->
 	<!-- Bootstrap Libray -->
 	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css?id=5d472e23c7e390b505e8dd6606f3a9ce">
