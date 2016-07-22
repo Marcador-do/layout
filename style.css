@@ -31,6 +31,7 @@ Colors:
 6. Sidebar Social Icons
 7. Sidebar footer links
 8. Sidebar footer copy
+9. Navbar submenu marcador
 /*------------------------------*/
 
 /* 0. General Styling */
@@ -443,8 +444,41 @@ p {
 .navbar-marcador {
 	background-color: #E80303;
 	border-color: #E80303;
+	margin-bottom: 0;
 }
-@media screen and (min-width: 480px) {
+.navbar-marcador .navbar-header.pull-right ul {
+	margin: 0;
+}
+.navbar-marcador .navbar-header.pull-right ul li {
+	display: inline-block;
+}
+.navbar-marcador .navbar-header.pull-right ul li a {
+	color: #fff;
+	padding: 12px 15px 15px 7px;
+	font-family: 'marcador-regular';
+}
+.navbar-marcador .navbar-header.pull-right ul li a i {
+	position: relative;
+	top: 5px;
+}
+.navbar-marcador .navbar-header.pull-right ul li.logged-in a {
+    padding: 10px;
+}
+.navbar-marcador .navbar-header.pull-right ul li.logged-in a img {
+    width: 30px;
+    border-radius: 50%;
+}
+.navbar-marcador .navbar-header.pull-right ul li a:hover,
+.navbar-marcador .navbar-header.pull-right ul li a:active {
+	background-color: rgba(0,0,0,0.3);
+}
+@media screen and ( min-width: 480px ) {
+	.navbar-marcador .navbar-header.pull-right ul li.logged-in a img {
+		width: 40px;
+	}
+	.navbar-marcador .navbar-header.pull-right ul li a {
+		padding: 14px 20px;
+	}
 	.navbar-marcador {
 		min-height: 60px;
 	}
@@ -691,4 +725,37 @@ p {
 	    letter-spacing: 1px;
 	    font-family: 'marcador-regular';
 	}
+}
+
+/* 9. Navbar submenu marcador */
+#marcador-navbar-submenu .nav {
+	margin-top: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #707070;
+	-webkit-box-shadow: 0 2px 4px #a0a0a0;
+	box-shadow: 0 2px 4px #a0a0a0;
+}
+#marcador-navbar-submenu .nav li a {
+	border-radius: 0;
+	color: #fafafa;
+	padding: 11px 24px;
+	font-family: 'marcador-regular';
+	position: relative;
+}
+#marcador-navbar-submenu .nav li.active a {
+	background-color: #707070;
+}
+#marcador-navbar-submenu .nav li.active a:after {
+	content: "";
+	position: absolute;
+	bottom: 0;;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #e80202;
+	display: block;
+}
+#marcador-navbar-submenu .nav li a:hover {
+	background-color: #888;
 }

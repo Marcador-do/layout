@@ -235,7 +235,7 @@ printf($authors); ?>
 		<!-- Navbar -->
 		<nav class="navbar navbar-default navbar-static-top navbar-marcador">
 			<div class="container-fluid">
-				<div class="navbar-header">
+				<div class="navbar-header pull-left">
 					<a href="#" class="navbar-brand navbar-menu-btn">
 						<i class="material-icons md-light">menu</i>
 					</a>
@@ -243,19 +243,46 @@ printf($authors); ?>
 						<img id="logo" src="assets/imgs/logo.png" height="24" width="130" alt="logo">
 					</a>
 				</div>
+				<div class="navbar-header pull-right">
+					<ul class="nav pull-left">
+						<!-- Not logged user
+						<li>
+							<a href="#">
+								<i class="material-icons md-light">person</i>
+							</a>
+						</li> -->
+						<!-- END OF Not logged user -->
+						<!-- Logged user -->
+						<li class="logged-in">
+							<a href="#userprofile">
+								<img src="//lh3.googleusercontent.com/-UcliwbkLvzY/AAAAAAAAAAI/AAAAAAAABCw/4bqBWqGn-OQ/s40-p-k-rw-no/photo.jpg" alt="USER_NAME">
+							</a>
+						</li>
+						<!-- END OF Logged user -->
+						<li>
+							<a href="#score">Score</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 		<!-- /.navbar-marcador -->
 		
+		<!-- #marcador-navbar-submenu -->
+		<div id="marcador-navbar-submenu">
+			<ul class="nav nav-pills">
+				<li class="active">
+					<a href="#noticias">Noticias</a>
+				</li>
+				<li>
+					<a href="#virales">Virales</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /#marcador-navbar-submenu -->
+		
 	</div>
 	<!-- /#page-content-wrapper -->
 	
-	<div class="container-fluid">
-		<div class="well" style="background-color: #ccc;padding: 25px;margin-top: 25px;">
-			<h1>
-				Hello World
-			</h1>
-		</div>
-	</div>
 </div>
 <!-- /#wrapper -->
