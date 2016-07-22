@@ -281,8 +281,4 @@ printf($authors); ?>
 		</div>
 		<!-- /#marcador-navbar-submenu -->
 		
-	</div>
-	<!-- /#page-content-wrapper -->
 	
-</div>
-<!-- /#wrapper -->

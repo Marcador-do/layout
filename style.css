@@ -32,6 +32,7 @@ Colors:
 7. Sidebar footer links
 8. Sidebar footer copy
 9. Navbar submenu marcador
+10. Hero unit
 /*------------------------------*/
 
 /* 0. General Styling */
@@ -729,6 +730,9 @@ p {
 }
 
 /* 9. Navbar submenu marcador */
+#marcador-navbar-submenu {
+	margin-bottom: 15px;
+}
 #marcador-navbar-submenu .nav {
 	margin-top: 0;
 	padding-left: 15px;
@@ -759,4 +763,36 @@ p {
 }
 #marcador-navbar-submenu .nav li a:hover {
 	background-color: #888;
+}
+
+/* 10. Hero unit */
+.marcador-hero-post {}
+
+.marcador-hero-unit {
+	position: relative;
+	min-height: 225px;
+	max-height: 300px;
+	background-color: #ccc;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.marcador-hero-unit .hero-heading h1 {
+	font-size: 18px;
+    margin-top: 125px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+@media screen and ( min-width: 480px ) {
+	.marcador-hero-unit {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
