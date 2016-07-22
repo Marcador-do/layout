@@ -469,7 +469,8 @@ p {
     border-radius: 50%;
 }
 .navbar-marcador .navbar-header.pull-right ul li a:hover,
-.navbar-marcador .navbar-header.pull-right ul li a:active {
+.navbar-marcador .navbar-header.pull-right ul li a:active,
+.navbar-marcador .navbar-header.pull-right ul li a:focus {
 	background-color: rgba(0,0,0,0.3);
 }
 @media screen and ( min-width: 480px ) {
