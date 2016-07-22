@@ -255,7 +255,7 @@ printf($authors); ?>
 						<!-- Logged user -->
 						<li class="logged-in">
 							<a href="#userprofile">
-								<img src="//lh3.googleusercontent.com/-UcliwbkLvzY/AAAAAAAAAAI/AAAAAAAABCw/4bqBWqGn-OQ/s40-p-k-rw-no/photo.jpg" alt="USER_NAME">
+								<img src="http://placehold.it/50x50&text=IMG" alt="USER_NAME">
 							</a>
 						</li>
 						<!-- END OF Logged user -->
