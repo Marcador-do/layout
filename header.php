@@ -77,7 +77,7 @@ printf($authors); ?>
 	<script type="text/javascript" src="assets/js/sidebar-menu.js"></script>
 	<script type="text/javascript" src="assets/js/sidebar-nav-submenu.js"></script>
 
-	<title>Marcdor.do</title>
+	<title>Marcador.do</title>
 </head>
 <!-- Wrapper -->
 <div id="wrapper" class="">
