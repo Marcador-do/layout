@@ -10,6 +10,18 @@
  */
 ?>
 <?php get_header(); ?>
+<?php /* <!-- #marcador-navbar-submenu --> */ ?>
+	<div id="marcador-navbar-submenu">
+		<ul class="nav nav-pills">
+			<li class="active">
+				<a href="#noticias">Noticias</a>
+			</li>
+			<li>
+				<a href="#virales">Virales</a>
+			</li>
+		</ul>
+	</div>
+	<?php /* <!-- /#marcador-navbar-submenu --> */ ?>
 <!-- Marcador Hero Post -->
 <div class="marcador-hero-post">
 	<div class="container-fluid">
