@@ -822,6 +822,7 @@ p {
 /* 11. Marcador Hero Post Score */
 .marcador-hero-post.score .marcador-hero-unit {
 	margin-bottom: 30px;
+	min-height: 340px;
 }
 .marcador-hero-post.score .hero-heading h1 {
 	color: #000;
