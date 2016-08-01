@@ -25,6 +25,12 @@ $authors = <<<AUTHORS
 *|==============================
 -->\n
 AUTHORS;
+
+/**
+ * Header Settings for Marcador customizers
+ */
+$logo_customizer = get_option( 'marcador_logo_setting_handler', get_template_directory_uri() . '/assets/imgs/logo.png' );
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -53,8 +59,9 @@ AUTHORS;
     <?php /* <!-- Font-family END --> */ ?>
 	<?php /* <!-- Bootstrap Libray --> */ ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/bootstrap/css/bootstrap.min.css?id=5d472e23c7e390b505e8dd6606f3a9ce">
-	<?php /* <!-- Stylesheet START --> */ ?>
+	<?php /* <!-- Stylesheet START --> 
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+	*/ ?>
 	<?php /* <!-- Stylesheet END --> */ ?>
 
 	<?php /* <!-- TESTING --> */ ?>
@@ -226,17 +233,18 @@ AUTHORS;
 							<i class="material-icons md-light">menu</i>
 						</a>
 						<a class="navbar-brand" href="#">
-							<img id="logo" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/logo.png" height="24" width="130" alt="logo">
+							<img id="logo" src="<?php echo $logo_customizer; ?>" height="24" width="130" alt="logo">
 						</a>
 					</div>
 					<div class="navbar-header pull-right">
 						<ul class="nav pull-left">
-							<?php /* <!-- Not logged user */ ?>
+							<?php /* <!-- Not logged user 
 							<li>
 								<a href="#">
 									<i class="material-icons md-light">person</i>
 								</a>
 							</li> 
+							*/ ?>
 							<?php /* --> */ ?>
 							<?php /* <!-- END OF Not logged user --> */ ?>
 							<?php /* <!-- Logged user --> */ ?>
