@@ -226,7 +226,7 @@ AUTHORS;
 							<i class="material-icons md-light">menu</i>
 						</a>
 						<a class="navbar-brand" href="#">
-							<img id="logo" src="assets/imgs/logo.png" height="24" width="130" alt="logo">
+							<img id="logo" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/logo.png" height="24" width="130" alt="logo">
 						</a>
 					</div>
 					<div class="navbar-header pull-right">
