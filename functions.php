@@ -143,4 +143,5 @@ add_filter( 'body_class', 'marcador_body_classes' );
 /**
  * Customizer additions.
  */
+require get_template_directory() . '/customizers/normalize.php';
 require get_template_directory() . '/customizers/logo/logo.php';
