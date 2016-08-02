@@ -35,6 +35,7 @@ Colors:
 10. Hero unit
 11. 11. Marcador Hero Post Scoreore
 12. Marcador Post Listing 
+13. Marcador archive, date, author, search generic
 /*------------------------------*/
 
 /* 0. General Styling */
@@ -978,5 +979,30 @@ p {
 	}
 	.marcador-post-list-date a {
 		padding-left: 10px;
+	}
+}
+
+
+/* 13. Marcador archive, date, author, search generic */
+#marcador-page-template {
+    margin-top: 15px;
+}
+.page-header-template {
+    padding: 5px 25px;
+    border-left: solid 10px #e80303;
+    box-shadow: 0 2px 4px #dadada;
+}
+.page-header-template .page-title {
+    font-style: italic;
+    font-size: 18px;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+}
+@media screen and ( min-width: 480px ) {
+	.page-header-template {
+		padding: 10px 25px;
+	}	
+	.page-header-template .page-title {
+		font-size: 24px;
 	}
 }

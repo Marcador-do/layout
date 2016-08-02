@@ -155,4 +155,18 @@
 		</div>
 	</div>
 </div>
+
+<div id="marcador-page-template" class="search">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 div col-sm-12 col-md-12 col-lg-12">
+				<header class="page-header-template">
+					<h2 class="page-title">
+						Baloncesto
+					</h2>
+				</header>
+			</div>
+		</div>
+	</div>
+</div> 
 <?php get_footer();; ?>
