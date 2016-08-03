@@ -13,6 +13,7 @@
 <?php if( have_posts() ): ?>
 	you are in <code>index.php</code>
 	<?php while( have_posts() ): the_post(); ?>
+	<?php echo get_post_format(); ?>
 		<?php the_title(); ?>
 		<?php the_content(); ?>
 	<?php endwhile; ?>
