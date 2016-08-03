@@ -7,6 +7,7 @@
  *| 
  *| 
  *| @author Richard Blondet
+ *| @package marcadordo
  *|=======================================|
 */
 ( function( $ ) {

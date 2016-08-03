@@ -2,7 +2,7 @@
 /**
  * marcador Theme Customizer Normalizer.
  *
- * @package marcador
+ * @package marcadordo
  * @author Richard Blondet <richardblondet@gmail.com>
  */
 

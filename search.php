@@ -6,7 +6,7 @@
  *
  * @link https://codex.wordpress.org/Category_Templates
  * @author  Richard Blonder <richardblondet@gmail.com>
- * @package marcador
+ * @package marcadordo
  */
 ?>
 <?php get_header(); ?>
