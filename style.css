@@ -941,6 +941,10 @@ p {
     font-family: 'marcador-bold';
     margin-bottom: 2px;
 }
+.marcador-post-list-excerpt {
+	font-family: 'marcador-regular';
+	color: #888;
+}
 .marcador-post-list-title a {
 	color: #333;
 }
@@ -984,7 +988,11 @@ p {
 		padding-left: 10px;
 	}
 }
-
+@media screen and ( min-width: 768px ) {
+	.marcador-post-list-image {
+		min-height: 185px;
+	}
+}
 
 /* 13. Marcador archive, date, author, search generic title */
 #marcador-page-template {

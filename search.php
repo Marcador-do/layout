@@ -52,14 +52,16 @@
 				 								$categories = get_the_category();
 												$category = $categories[0]->name; 
 												$category_id = $categories[0]->term_id; // var_dump($categories[0]); 
+												$cat_count = count( $categories ) - 1;
+												$c = 0;
 											?>
-											<?php if( count( $categories ) > 1 ): ?>
+											<?php if( $cat_count > 1 ): ?>
 											<div class="marcador-post-list-category">
 												<?php foreach ($categories as $cat => $cat_value):  ?>
 													<?php if( $cat_value->slug != 'acento' ): ?>
 													<a href="<?php echo esc_url( get_category_link( $cat_value->term_id ) ); ?>">
 														<?php echo $cat_value->name; ?>
-													</a>, 
+													</a><?php if( ++$c !== $cat_count ): ?>,<?php endif; ?>
 													<?php endif; ?>
 												<?php endforeach; ?>
 											</div>
@@ -68,6 +70,9 @@
 												<a href="<?php echo esc_url( get_permalink() ); ?>">
 													<?php the_title(); ?>
 												</a>
+											</div>
+											<div class="marcador-post-list-excerpt">
+												<?php the_excerpt(); ?>
 											</div>
 											<div class="marcador-post-list-meta">
 												<div class="marcador-post-list-author">
