@@ -73,7 +73,7 @@ $logo_customizer = get_option( 'marcador_logo_setting_handler', get_template_dir
 <body <?php body_class(); ?>>
 	
 	<?php /* <!-- Wrapper --> */ ?>
-	<div id="wrapper" class="">
+	<div id="wrapper" class="<?php if( is_search()){ echo "toggled"; } ?>">
 		
 		<?php /* <!-- Sidebar --> */ ?>
 		<div id="sidebar-wrapper">
@@ -86,7 +86,7 @@ $logo_customizer = get_option( 'marcador_logo_setting_handler', get_template_dir
 						</span>
 					</a> 
 				</li>
-				<li id="sidebar-search-toggle" sidebar-nav-submenu class>
+				<li id="sidebar-search-toggle" sidebar-nav-submenu class="<?php if( is_search()){ echo "toggled"; } ?>">
 					<a href="#buscar"> 
 						<span class="sidebar-icon">
 							<i class="material-icons md-light md-24">search</i>
@@ -102,7 +102,7 @@ $logo_customizer = get_option( 'marcador_logo_setting_handler', get_template_dir
 								<form action="/" method="get">
 									<div class="row">
 										<div class="col-xs-9">
-											<input type="text" class="form-control input-lg" name="s">
+											<input type="text" class="form-control input-lg" name="s" <?php if( get_search_query() ):  ?> value="<?php echo get_search_query(); ?>" <?php endif; ?>>
 										</div>
 										<div class="col-xs-3">
 											<button type="submit" class="btn btn-search btn-block btn-lg">
