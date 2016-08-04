@@ -34,7 +34,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<?php while( have_posts() ): the_post(); ?>
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 marcador-post-list">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 marcador-post-list">
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-2 marcador-post-list-image-col">
@@ -81,7 +81,7 @@
 													</a>
 												</div>
 												<div class="marcador-post-list-date">
-													<a href="#date-link">
+													<a href="<?php echo esc_url( get_day_link( $year = get_the_date('Y') , $month = get_the_date('m'), $day = get_the_date('d') ) ) ?>">
 														<?php the_date('M d, Y', '<i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;', ''); ?>
 													</a> 
 												</div>

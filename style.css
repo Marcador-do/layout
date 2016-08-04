@@ -989,8 +989,11 @@ p {
 	}
 }
 @media screen and ( min-width: 768px ) {
+	.marcador-post-list {
+		margin-left: 50px;	
+	}
 	.marcador-post-list-image {
-		min-height: 185px;
+		min-height: 165px;
 	}
 }
 

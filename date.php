@@ -18,7 +18,7 @@
 				<div class="col-xs-12 div col-sm-12 col-md-12 col-lg-12">
 					<header class="page-header-template">
 						<h2 class="page-title">
-							Ene 16, 2016
+							<?php the_archive_title(); ?>
 						</h2>
 					</header>
 				</div>
@@ -29,42 +29,63 @@
 
 	<div class="page-template-post-listing">
 		<!-- Marcador posts -->
+		<?php if( have_posts() ):  ?>
 		<div class="marcador-posts-listing-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<?php for ($i=0; $i <= 1; $i++): ?>
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 marcador-post-list">
+					<?php while( have_posts() ): the_post(); ?>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 marcador-post-list">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-xs-4 col-sm-5 col-md-4 col-lg-2 marcador-post-list-image-col">
-										<a href="#post-permalink">
-											<div class="marcador-post-list-image"></div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-2 marcador-post-list-image-col">
+										<a href="<?php echo esc_url( get_permalink() ); ?>">
+											<?php if( has_post_thumbnail( get_the_id()) ): ?>
+												<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'full' ); ?>
+
+											<?php endif; ?>
+											<div class="marcador-post-list-image" style="background-image: url('<?php echo $image[0]; ?>') "></div>
 										</a> 
 									</div>
-									<div class="col-xs-8 col-sm-7 col-md-8 col-lg-10">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
 										<div class="marcador-post-list-content">
+											<?php 
+				 								$categories = get_the_category();
+												$category = $categories[0]->name; 
+												$category_id = $categories[0]->term_id; // var_dump($categories[0]); 
+												$cat_count = count( $categories ) - 1;
+												$c = 0;
+											?>
+											<?php if( $cat_count > 1 ): ?>
 											<div class="marcador-post-list-category">
-												<a href="#category-permalink">
-													Tenis
-												</a> 
+												<?php foreach ($categories as $cat => $cat_value):  ?>
+													<?php if( $cat_value->slug != 'acento' ): ?>
+													<a href="<?php echo esc_url( get_category_link( $cat_value->term_id ) ); ?>">
+														<?php echo $cat_value->name; ?>
+													</a><?php if( ++$c !== $cat_count ): ?>,<?php endif; ?>
+													<?php endif; ?>
+												<?php endforeach; ?>
 											</div>
+											<?php endif; ?>
 											<div class="marcador-post-list-title">
-												<a href="#post-title-permalink">
-													Temporada perfecta de los Warriors arruinada: Lebron e Irving dan título a Cleveland
+												<a href="<?php echo esc_url( get_permalink() ); ?>">
+													<?php the_title(); ?>
 												</a>
+											</div>
+											<div class="marcador-post-list-excerpt">
+												<?php the_excerpt(); ?>
 											</div>
 											<div class="marcador-post-list-meta">
 												<div class="marcador-post-list-author">
-													<a href="#author-link">
-														César Marchena
+													<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">
+														<?php echo get_the_author_meta( 'user_nicename' ); ?>
 													</a>
 												</div>
 												<div class="marcador-post-list-date">
-													<a href="#date-link">
-														Jun 16, 2016
+													<a href="<?php echo esc_url( get_day_link( $year = get_the_date('Y') , $month = get_the_date('m'), $day = get_the_date('d') ) ) ?>">
+														<?php the_date('M d, Y', '<i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;', ''); ?>
 													</a> 
 												</div>
-												<!-- Conditional -->
+												<!-- Conditional if favorite -->
 												<div class="marcador-post-list-fav">
 													<i class="material-icons">star</i>
 												</div>
@@ -75,10 +96,11 @@
 								</div>
 							</div>
 						</div> 
-					<?php endfor; ?>
+					<?php endwhile; ?>
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 		<!-- .marcador-posts-listing -->
 	</div>
 	
