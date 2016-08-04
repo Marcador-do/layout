@@ -982,10 +982,10 @@ p {
 @media screen and ( min-width: 480px ) {
 	.marcador-post-list-author a {
 		padding-right: 15px;
-		border-right: solid 3px #aab0b5;
 	}
 	.marcador-post-list-date a {
-		padding-left: 10px;
+		padding-left: 15px;
+		border-left: solid 3px #aab0b5;
 	}
 }
 @media screen and ( min-width: 768px ) {
@@ -1019,4 +1019,35 @@ p {
 	.page-header-template .page-title {
 		font-size: 24px;
 	}
+}
+
+#single-post-template-file {
+	margin-top: 15px;
+}
+.single-post-featured-image {
+	min-height: 400px;
+	background-color: #ccc;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.single-post-featured-image-description {
+    font-size: 12px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-style: italic;
+    font-weight: 600;
+}
+.single-post-list-author a,
+.single-post-list-date a {
+    font-size: 14px;
+    color: #aab0b5;
+    font-weight: 700;
+    text-align: right;
+    font-style: italic;
+}
+.single-post-list-author,
+.single-post-list-date {
+    display: inline-block;
+    color: #aab0b5;
 }
