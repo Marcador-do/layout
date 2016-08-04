@@ -37,7 +37,7 @@
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 marcador-post-list">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-xs-4 col-sm-5 col-md-4 col-lg-2 marcador-post-list-image-col">
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-2 marcador-post-list-image-col">
 										<a href="<?php echo esc_url( get_permalink() ); ?>">
 											<?php if( has_post_thumbnail( get_the_id()) ): ?>
 												<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'full' ); ?>
@@ -46,7 +46,7 @@
 											<div class="marcador-post-list-image" style="background-image: url('<?php echo $image[0]; ?>') "></div>
 										</a> 
 									</div>
-									<div class="col-xs-8 col-sm-7 col-md-8 col-lg-10">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
 										<div class="marcador-post-list-content">
 											<?php 
 				 								$categories = get_the_category();
