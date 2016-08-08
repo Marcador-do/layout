@@ -982,11 +982,11 @@ p {
 }
 @media screen and ( min-width: 480px ) {
 	.marcador-post-list-author a {
-		padding-right: 15px;
+		// padding-right: 15px;
 	}
 	.marcador-post-list-date a {
-		padding-left: 15px;
-		border-left: solid 3px #aab0b5;
+		// padding-left: 15px;
+		// border-left: solid 3px #aab0b5;
 	}
 }
 @media screen and ( min-width: 768px ) {
