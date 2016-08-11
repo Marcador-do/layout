@@ -65,6 +65,9 @@ function marcador_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// add post-formats to post_type 'post'
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'edwin' ) );
 }
 endif;
 add_action( 'after_setup_theme', 'marcador_setup' );
